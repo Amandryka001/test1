@@ -1,0 +1,498 @@
+{
+	"id": "b65e134e-0b83-42b1-b5ce-b9a5c3375b1e",
+	"name": "Lesson 17. API",
+	"timestamp": "2023-01-20T04:42:10.873Z",
+	"collection_id": "24992880-0dad71f6-f357-428b-875a-0b7bbc24c918",
+	"folder_id": 0,
+	"environment_id": "24992880-f39869b2-7187-4c7c-a375-8d6a47a2641f",
+	"totalPass": 29,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "dca32280-c28f-4ad2-a095-e65d1b56428c",
+			"name": "1.200: Post  CREATE user=morpheus",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 3236,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'name' ": true,
+				"Body matches string 'gender' ": true,
+				"Body matches string 'age' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'name' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'gender' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'age' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3236
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'name' ": true,
+					"Body matches string 'gender' ": true,
+					"Body matches string 'age' ": true
+				}
+			]
+		},
+		{
+			"id": "5b45c4fd-9f60-48fc-93ce-5b9fd4c9fb15",
+			"name": "2.200: Post Create user=Olexandra",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 1418,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'name' ": true,
+				"Body matches string 'gender' ": true,
+				"Body matches string 'age' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'name' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'gender' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'age' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1418
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'name' ": true,
+					"Body matches string 'gender' ": true,
+					"Body matches string 'age' ": true
+				}
+			]
+		},
+		{
+			"id": "01d694e4-3121-46f2-b78a-ec1e6130c510",
+			"name": "3.200: Post Create user=andrii",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 1328,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'name' ": true,
+				"Body matches string 'gender' ": true,
+				"Body matches string 'age' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'name' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'gender' ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'age' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1328
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'name' ": true,
+					"Body matches string 'gender' ": true,
+					"Body matches string 'age' ": true
+				}
+			]
+		},
+		{
+			"id": "352d37e3-bc0a-4e42-9b0d-fff5fc75001d",
+			"name": "4.200: GET User by {{id_1}}",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=195a1d12-4c41-4e3b-8228-aa1e213f6647",
+			"time": 533,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'id' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'id' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				533
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'id' ": true
+				}
+			]
+		},
+		{
+			"id": "5640cf7f-a899-4200-838b-840744f39712",
+			"name": "5.200: GET User by {{id_2}}",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=019377df-62d6-45ed-9164-7bdab260ff53",
+			"time": 509,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'id' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'id' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				509
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'id' ": true
+				}
+			]
+		},
+		{
+			"id": "1ab98d23-f15c-4c90-bbe2-721e69859c0e",
+			"name": "6.200: GET User by {{id_3}}",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=366a1519-ec24-45a5-9913-2c7d017661ff",
+			"time": 494,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'id' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'id' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				494
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'id' ": true
+				}
+			]
+		},
+		{
+			"id": "73920f3d-eb64-464f-99a2-4192165a2914",
+			"name": "7.200: PATCH EDIT user by {{id_1}}",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 621,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				621
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "7c909df3-b9c9-4380-9825-b7f66145592b",
+			"name": "7.200: DELETE user by {{id_1}}",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=195a1d12-4c41-4e3b-8228-aa1e213f6647",
+			"time": 459,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string 'User is deleted' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'User is deleted' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				459
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string 'User is deleted' ": true
+				}
+			]
+		},
+		{
+			"id": "91364541-b19a-49a9-bd8a-d89b740a52d9",
+			"name": "8.400: Negative Post  CREATE user=ygvcdyvc",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 270,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Body matches string 'Validation error' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'Validation error' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				270
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Body matches string 'Validation error' ": true
+				}
+			]
+		},
+		{
+			"id": "8a4e03d6-c272-4228-9fe3-bb10a2ca4709",
+			"name": "9.400: Negative GET User by no id",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=",
+			"time": 291,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Body matches string 'id is required parameter' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'id is required parameter' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				291
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Body matches string 'id is required parameter' ": true
+				}
+			]
+		},
+		{
+			"id": "ab65c2b4-66f1-4c47-928f-d5bdfbe0e57d",
+			"name": "10.400: PATCH EDIT user by id=0",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+			"time": 395,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false,
+				"Body matches string 'No user found' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Body matches string 'No user found' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				395
+			],
+			"allTests": [
+				{
+					"Status code is 400": false,
+					"Body matches string 'No user found' ": true
+				}
+			]
+		},
+		{
+			"id": "189af863-7273-4c5a-8523-30b922ce8439",
+			"name": "11.400: DELETE user by no id",
+			"url": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=",
+			"time": 275,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Body matches string 'id is required parameter' ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string 'id is required parameter' ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				275
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Body matches string 'id is required parameter' ": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 9829,
+	"collection": {
+		"requests": [
+			{
+				"id": "dca32280-c28f-4ad2-a095-e65d1b56428c",
+				"method": "POST"
+			},
+			{
+				"id": "5b45c4fd-9f60-48fc-93ce-5b9fd4c9fb15",
+				"method": "POST"
+			},
+			{
+				"id": "01d694e4-3121-46f2-b78a-ec1e6130c510",
+				"method": "POST"
+			},
+			{
+				"id": "352d37e3-bc0a-4e42-9b0d-fff5fc75001d",
+				"method": "GET"
+			},
+			{
+				"id": "5640cf7f-a899-4200-838b-840744f39712",
+				"method": "GET"
+			},
+			{
+				"id": "1ab98d23-f15c-4c90-bbe2-721e69859c0e",
+				"method": "GET"
+			},
+			{
+				"id": "73920f3d-eb64-464f-99a2-4192165a2914",
+				"method": "PATCH"
+			},
+			{
+				"id": "7c909df3-b9c9-4380-9825-b7f66145592b",
+				"method": "DELETE"
+			},
+			{
+				"id": "91364541-b19a-49a9-bd8a-d89b740a52d9",
+				"method": "POST"
+			},
+			{
+				"id": "8a4e03d6-c272-4228-9fe3-bb10a2ca4709",
+				"method": "GET"
+			},
+			{
+				"id": "ab65c2b4-66f1-4c47-928f-d5bdfbe0e57d",
+				"method": "PATCH"
+			},
+			{
+				"id": "189af863-7273-4c5a-8523-30b922ce8439",
+				"method": "DELETE"
+			}
+		]
+	}
+}
