@@ -1,0 +1,1376 @@
+{
+	"info": {
+		"_postman_id": "0dad71f6-f357-428b-875a-0b7bbc24c918",
+		"name": "Lesson 17. API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24992880"
+	},
+	"item": [
+		{
+			"name": "1.200: Post  CREATE user=morpheus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'name' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'gender' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'age' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"age\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"     postman.setEnvironmentVariable (\"id_1\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"Kyiv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1.200: Post  CREATE user=morpheus",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"Kyiv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 01:45:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBLF-i-DvHcEPWw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 25,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"morpheus\",\n    \"id\": \"9c5f30b6-0aed-4503-9347-34dabcd2c561\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2.200: Post Create user=Olexandra",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'name' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'gender' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'age' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"age\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"     postman.setEnvironmentVariable (\"id_2\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"age\": \"{{age}}\",\r\n    \"gender\": \"{{gender_m}}\",\r\n    \"city\": \"{{city_K}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2.200: Post Create user=Olexandra",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"age\": \"{{age}}\",\r\n    \"gender\": \"{{gender_m}}\",\r\n    \"city\": \"{{city_K}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:22:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBQkOi5uvHcEJ0w="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 34,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"Olexandra\",\n    \"id\": \"b26b23a0-5fe9-4747-aad8-a9c509ce0dfb\"\n}"
+				}
+			]
+		},
+		{
+			"name": "3.200: Post Create user=andrii",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'name' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'gender' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+							"});\r",
+							"pm.test(\"Body matches string 'age' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"age\");\r",
+							"});\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"     postman.setEnvironmentVariable (\"id_3\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name_2}}\",\r\n    \"age\": \"{{age_2}}\",\r\n    \"gender\": \"{{gender_m}}\",\r\n    \"city\": \"{{city_V}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.200: Post Create user=andrii",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{name_2}}\",\r\n    \"age\": \"{{age_2}}\",\r\n    \"gender\": \"{{gender_m}}\",\r\n    \"city\": \"{{city_V}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:27:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBRULhnZPHcEJng="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 15,\n    \"city\": \"Vinnytsa\",\n    \"gender\": \"male\",\n    \"name\": \"andrii\",\n    \"id\": \"67cb0082-0463-41e8-a289-1c9a9e217852\"\n}"
+				}
+			]
+		},
+		{
+			"name": "4.200: GET User by {{id_1}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'id' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id_1}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "4.200: Post  GET User by id= 9c5f30b6-0aed-4503-9347-34dabcd2c561",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_1}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:01:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBNisgWZPHcEPsg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 25,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"morpheus\",\n    \"id\": \"9c5f30b6-0aed-4503-9347-34dabcd2c561\"\n}"
+				}
+			]
+		},
+		{
+			"name": "5.200: GET User by {{id_2}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'id' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_2}}",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id_2}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "5.200: Post  GET User by id=b26b23a0-5fe9-4747-aad8-a9c509ce0dfb",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_2}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_2}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:32:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBSApgzlvHcEJhw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 34,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"Olexandra\",\n    \"id\": \"b26b23a0-5fe9-4747-aad8-a9c509ce0dfb\"\n}"
+				}
+			]
+		},
+		{
+			"name": "6.200: GET User by {{id_3}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'id' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_3}}",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id_3}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "6.200: Post  GET User by id=67cb0082-0463-41e8-a289-1c9a9e217852",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_3}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_3}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:33:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBSNOhZuPHcEJsg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 15,\n    \"city\": \"Vinnytsa\",\n    \"gender\": \"male\",\n    \"name\": \"andrii\",\n    \"id\": \"67cb0082-0463-41e8-a289-1c9a9e217852\"\n}"
+				}
+			]
+		},
+		{
+			"name": "7.200: PATCH EDIT user by {{id_1}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{id_1}}\",\r\n    \"name\": \"fberuibgf\",\r\n    \"age\": \"43\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"vgbsvs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "7.200: PATCH EDIT user by {{id_1}}",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id_1}}\",\r\n    \"name\": \"fberuibgf\",\r\n    \"age\": \"43\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"vgbsvs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 04:25:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "105"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBimxjBrvHcEJSA="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"gender\": \"male\",\n    \"city\": \"vgbsvs\",\n    \"name\": \"fberuibgf\",\n    \"id\": \"232ea9a7-b15d-49c0-90d6-8d1124339f3d\",\n    \"age\": 25\n}"
+				}
+			]
+		},
+		{
+			"name": "7.200: DELETE user by {{id_1}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string 'User is deleted' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User is deleted\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id_1}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "7.200: DELETE user by {{id_1}}",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_1}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 04:27:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBi0lh-JPHcEJ0Q="
+						}
+					],
+					"cookie": [],
+					"body": "User is deleted"
+				}
+			]
+		},
+		{
+			"name": "8.400: Negative Post  CREATE user=ygvcdyvc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'Validation error' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Validation error\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ygvcdyvc\",\r\n    \"age\": \"456\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"Kyiv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1.200: Post  CREATE user=morpheus",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"age\": \"25\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"Kyiv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 01:45:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBLF-i-DvHcEPWw="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 25,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"morpheus\",\n    \"id\": \"9c5f30b6-0aed-4503-9347-34dabcd2c561\"\n}"
+				}
+			]
+		},
+		{
+			"name": "9.400: Negative GET User by no id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'id is required parameter' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id is required parameter\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "4.200: Post  GET User by id= 9c5f30b6-0aed-4503-9347-34dabcd2c561",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_1}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 02:01:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBNisgWZPHcEPsg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"age\": 25,\n    \"city\": \"Kyiv\",\n    \"gender\": \"male\",\n    \"name\": \"morpheus\",\n    \"id\": \"9c5f30b6-0aed-4503-9347-34dabcd2c561\"\n}"
+				}
+			]
+		},
+		{
+			"name": "10.400: PATCH EDIT user by id=0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Body matches string 'No user found' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"No user found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"0\",\r\n    \"name\": \"fberuibgf\",\r\n    \"age\": \"43\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"vgbsvs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "7.200: PATCH EDIT user by {{id_1}}",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"{{id_1}}\",\r\n    \"name\": \"fberuibgf\",\r\n    \"age\": \"43\",\r\n    \"gender\": \"male\",\r\n    \"city\": \"vgbsvs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 04:25:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "105"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBimxjBrvHcEJSA="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"gender\": \"male\",\n    \"city\": \"vgbsvs\",\n    \"name\": \"fberuibgf\",\n    \"id\": \"232ea9a7-b15d-49c0-90d6-8d1124339f3d\",\n    \"age\": 25\n}"
+				}
+			]
+		},
+		{
+			"name": "11.400: DELETE user by no id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string 'id is required parameter' \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id is required parameter\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id=",
+					"protocol": "https",
+					"host": [
+						"em",
+						"staging",
+						"api",
+						"onereach",
+						"ai"
+					],
+					"path": [
+						"http",
+						"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "7.200: DELETE user by {{id_1}}",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://em.staging.api.onereach.ai/http/1b3bebb7-e882-4f1e-a74b-ee381bfa69d6/users?id={{id_1}}",
+							"protocol": "https",
+							"host": [
+								"em",
+								"staging",
+								"api",
+								"onereach",
+								"ai"
+							],
+							"path": [
+								"http",
+								"1b3bebb7-e882-4f1e-a74b-ee381bfa69d6",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id_1}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 20 Jan 2023 04:27:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fBi0lh-JPHcEJ0Q="
+						}
+					],
+					"cookie": [],
+					"body": "User is deleted"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "variable_key",
+			"value": ""
+		}
+	]
+}
